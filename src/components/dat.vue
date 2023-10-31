@@ -3,12 +3,12 @@
         <div class="mycard" v-for="item in uselist" :key="item.id">
             <div class="card">
                 <div class="header">
-                    <span class="left"><v-icon>mdi-account-outline</v-icon>{{item.name}}</span>
+                    <span class="left"><v-icon style="margin-bottom:4px">mdi-account-outline</v-icon>{{item.name}}</span>
                     <span class="right"> {{item.jg}}元</span>
                 </div>
-                <div class="text"><h1><v-icon>mdi-map-marker-outline</v-icon>{{item.dot}}</h1></div>
-                <div class="text"><h1><v-icon>mdi-clock-outline</v-icon>{{item.clock}}</h1></div>
-                <div class="bttt"><v-btn  color="rgb(255, 92, 92)" class="btt"><p class="bt">接单</p></v-btn></div>
+                <div class="text"><h1><v-icon style="margin-bottom:8px">mdi-map-marker-outline</v-icon>{{item.dot}}</h1></div>
+                <div class="text"><h1><v-icon style="margin-bottom:8px">mdi-clock-outline</v-icon>{{item.clock}}</h1></div>
+                <div class="bttt"><v-btn  color="#FF6600" class="btt"><p class="bt">接单</p></v-btn></div>
             </div>
         </div>
 </div>
@@ -38,7 +38,7 @@ data(){
 }
 .btt{
     width: 92vw;
-    color: rgb(255, 92, 92);
+    color: #FF6600;
     z-index: 5;
 }
 .bt{

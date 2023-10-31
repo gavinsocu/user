@@ -1,6 +1,6 @@
 <template>
   <v-card @click="group" class="sisi">
-    <v-toolbar color="rgb(255, 92, 92)">
+    <v-toolbar color="#2C2B2A">
       <v-app-bar-nav-icon  @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title><div class="bt">鹤拍</div></v-toolbar-title>
@@ -22,34 +22,43 @@
           grow
         >
           <v-tab >
-              <div class="bt">大厅</div>
+              <div class="bt" @click="dat = true;yjiedan = false;phb = false">大厅</div>
           </v-tab>
           <v-tab>
-            <div class="bt">已接单</div>
+            <div class="bt"  @click="dat = false;yjiedan = true;phb = false">已接单</div>
           </v-tab>
           <v-tab>
-            <div class="bt">排行榜</div>
+            <div class="bt"  @click="dat = false;yjiedan = false;phb = true">排行榜</div>
           </v-tab>
         </v-tabs>
       </template>
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer"  temporary  class="oopp"> 
-      <v-list :items="items"></v-list>
+    <v-navigation-drawer v-model="drawer"  temporary  class="oopp" :width="330"> 
+      <mine/>
       </v-navigation-drawer>
       
       
   </v-card>
-      <div>
+      <div v-if="dat">
         <dat/>
+      </div>
+      <div v-if="yjiedan">
+        <yjd/>
+      </div>
+      <div v-if="phb">
+        <phb/>
       </div>
 </template>
 <script >
 
 import dat from '../components/dat.vue';
+import yjd from '../components/yjd.vue';
+import phb from '../components/phb.vue';
+import mine from '../components/mine.vue';
   export default {
     components: {
-      dat
+      dat,yjd,phb,mine
     },
     data () {
       return {
@@ -58,6 +67,9 @@ import dat from '../components/dat.vue';
       { 'id': 2, 'name': '已接单' },
       { 'id': 3, 'name': '排行榜' }
     ],
+    dat:true,
+    yjiedan:false,
+    phb:false,
     model: 'tab-2',
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     drawer: false,
@@ -102,6 +114,7 @@ import dat from '../components/dat.vue';
 }
 .oopp{
   z-index: 8810;
+  width: 80vw;
 }
 .sisi{
   z-index: 8811;
