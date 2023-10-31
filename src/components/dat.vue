@@ -3,11 +3,11 @@
         <div class="mycard" v-for="item in uselist" :key="item.id">
             <div class="card">
                 <div class="header">
-                    <span class="left"><v-icon style="margin-bottom:4px">mdi-account-outline</v-icon>{{item.name}}</span>
+                    <span class="left"><v-icon style="margin-bottom:2px" color="black" size="15px">mdi-account-outline</v-icon>{{item.name}}</span>
                     <span class="right"> {{item.jg}}元</span>
                 </div>
-                <div class="text"><h1><v-icon style="margin-bottom:8px">mdi-map-marker-outline</v-icon>{{item.dot}}</h1></div>
-                <div class="text"><h1><v-icon style="margin-bottom:8px">mdi-clock-outline</v-icon>{{item.clock}}</h1></div>
+                <div class="text" style="margin-top:7px"><v-icon style="margin-bottom:4px">mdi-map-marker-outline</v-icon>{{item.dot}}</div>
+                <div class="text"><v-icon style="margin-bottom:4px">mdi-clock-outline</v-icon>{{item.clock}}</div>
                 <div class="bttt"><v-btn  color="#FF6600" class="btt"><p class="bt">接单</p></v-btn></div>
             </div>
         </div>
@@ -32,12 +32,13 @@ data(){
 
 <style scoped>
 .bttt{
+    margin-top: 10px;
     width: 100vw;
     display: flex;
     justify-content: center;
 }
 .btt{
-    width: 92vw;
+    width: 90vw;
     color: #FF6600;
     z-index: 5;
 }
@@ -60,7 +61,7 @@ data(){
 .niubi{
 
     width: 100vw;
-    background: #FBF6F6;
+    background: #dad5d5;
     height: 100vh;
 }
 .imgg{
@@ -73,6 +74,7 @@ data(){
     margin-left:5px;
     height: 20px;
     line-height: 35px;
+    color: rgb(232, 129, 12);
 }
 .right{
     float: right;
@@ -82,15 +84,16 @@ data(){
 }
 .header{
     width: 100%;
-    height: 20px;
+    height: 30px;
 }
 .text{
     width: 100%;
-    height: 65px;
-    line-height: 65px;
-    font-size:11px;
+    height: 50px;
+    line-height: 50px;
+    font-size:20px;
+    font-weight: 800;
     display: flex;
-    justify-content: center;
+    margin-left:55px;
     align-items: center;
 }
 </style>
