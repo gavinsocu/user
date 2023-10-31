@@ -1,5 +1,6 @@
 <template>
     <div class="niubi">
+        <div class="ko" style="height:5px;"></div>
         <div class="mycard" v-for="item in uselist" :key="item.id">
             <div class="card">
                 <div class="header">
@@ -57,6 +58,7 @@ data(){
     width: 100%;
     height: 100%;
     background: #fff;
+    border-radius: 5px;
 }
 .niubi{
 
